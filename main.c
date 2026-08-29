@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h> // system() 함수 사용
 
 int main(void) {
-    char src[] = "The worst things to eat before you sleep";
-    char dst[100];
+    system("chcp 65001"); // 콘솔 한글 깨짐 방지
 
-    strcpy(dst, src); // src의 문자열을 dst로 복사
+    char str[30] = "happy C programming";
 
-    printf("copied string : %s\n", dst);
+    printf("문자열 \"%s\"의 길이 : %d\n", str, (int)strlen(str));
 
     return 0;
 }
-
