@@ -1,3 +1,0 @@
-Sookmyung
-Electronics
-Programming
