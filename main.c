@@ -1,23 +1,14 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void) {
-    int i = 0;
-    char str[4];
-    
-    str[0] = 'a';
-    str[1] = 'b';
-    str[2] = 'c';
-    str[3] = '\0';
+    char src[] = "The worst things to eat before you sleep";
+    char dst[100];
 
-    // %s로 한 번에 출력
-    printf("%s\n", str);
+    strcpy(dst, src); // src의 문자열을 dst로 복사
 
-    // while문으로 한 글자씩 출력
-    while (str[i] != '\0') {
-        printf("%c", str[i]);
-        i++;
-    }
-    printf("\n");
+    printf("copied string : %s\n", dst);
 
     return 0;
 }
+
