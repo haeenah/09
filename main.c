@@ -2,21 +2,18 @@
 
 int main(void) {
     FILE *fp = NULL;
-    char word[100];
-    int i;
+    char c;
 
-    // 쓰기 모드("w")로 파일 열기
-    fp = fopen("sample.txt", "w");
+    // 읽기 모드("r")로 sample.txt 열기
+    fp = fopen("sample.txt", "r");
     if (fp == NULL) {
-        printf("파일 열기 실패!\n");
+        printf("파일을 못열음\n");
         return 1;
     }
 
-    // 3가지 단어를 입력받아 파일에 출력
-    for (i = 0; i < 3; i++) {
-        printf("input a word:");
-        scanf("%s", word);
-        fprintf(fp, "%s\n", word);
+    // 파일의 끝(EOF)을 만날 때까지 한 글자씩 읽어서 출력
+    while ((c = fgetc(fp)) != EOF) {
+        putchar(c); // 화면에 한 글자 출력
     }
 
     // 파일 닫기
